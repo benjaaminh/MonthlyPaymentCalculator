@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
+    <title>Monthly payment calculator</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container-fluid" style="max-width: 900px; margin: 0 auto;">
+    <h2 class="text-center">Prospects</h2>
+
+    <div th:if="${message != null}" class="alert alert-success alert-dismissible fade show text-center message"
+         role="alert">
+        [[${message}]]
+        <button type="button" class="close btn-sm" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+
+    <div th:if="${prospects.size() > 0}">
+        <table class="table table-hover table-responsive-xl">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Total loan</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Years</th>
+                <th scope="col">Monthly payment</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="prospect : ${prospects}">
+                <th scope="row">[[${prospect.id}]]</th>
+                <td>[[${prospect.name}]]</td>
+                <td>[[${prospect.totalLoan}]]</td>
+                <td>[[${prospect.interest}]]</td>
+                <td>[[${prospect.years}]]</td>
+                <td>[[${prospect.monthlyPayment}]]</td>
+                <td>
+                    <a th:href="@{'/delete/' + ${prospect.id}}" th:prospectName="${prospect.name}" id="btnDelete"
+                        class="fa-regular fa-trash-can icon-dark btn-delete"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <button class="btn btn-primary btn-sm mr-2"><a class="nav-link" th:href="@{/new}">Add new</a></button>
+        </div>
+    </div>
+
+    <div class="" th:unless="${prospects.size() > 0}">
+        <span>No prospects found!</span>
+        <div class="text-center">
+            <button class="btn btn-primary btn-sm mr-2"><a class="nav-link" th:href="@{/new}">Add new</a></button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

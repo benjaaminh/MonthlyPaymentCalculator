@@ -1,0 +1,13 @@
+.navbar {
+    padding: 0 10px;
+}
+
+*.icon-dark {
+    color: grey;
+}
+
+.message {
+    position: absolute;
+    top: 40px;
+    right:5px;
+}
