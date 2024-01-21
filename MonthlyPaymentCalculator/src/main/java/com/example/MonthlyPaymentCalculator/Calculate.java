@@ -3,11 +3,9 @@ package com.example.MonthlyPaymentCalculator;
 import com.example.MonthlyPaymentCalculator.models.Prospect;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -67,7 +65,6 @@ public class Calculate {
 
     }
 
-    private static final DecimalFormat df = new DecimalFormat("0.00");//set decimal formatting to two decimals
 
     public static String calculateFromFile(String path) {
         try {

@@ -10,5 +10,4 @@ import java.util.List;
 @Repository
 @Transactional
 public interface ProspectRepository extends JpaRepository<Prospect,Long> {
-    List<Prospect> findByName(String name);
 }
