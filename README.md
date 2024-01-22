@@ -44,4 +44,4 @@ Run the project using the following command:
 ```
 docker run -p 8080:8080 java-docker
 ```
-Or if you are using Docker desktop, build the image and run it through desktop application
+Or if you are using Docker desktop, build the image and run it through desktop application with port set to 8080
