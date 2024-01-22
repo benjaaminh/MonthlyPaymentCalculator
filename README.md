@@ -3,7 +3,7 @@ This project consists of two Programs, Calculate and MonthlyPaymentCalculatorApp
 
 Calculate.java prints out each prospect with their name, total loan, yearly interest, and amount of years as well as monthly payment.
 
-MonthlyPaymentCalculatorApplication.java runs a Spring Boot project with Thymeleaf and Maven in the web browser.
+MonthlyPaymentCalculatorApplication.java runs a Spring Boot project with Thymeleaf, Maven and Bootstrap in the web browser.
 
 ## Prerequisites for running the Spring Project
 JDK 17 and JAVA_HOME environvment variable set
