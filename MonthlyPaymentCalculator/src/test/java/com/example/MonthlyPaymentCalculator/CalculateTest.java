@@ -2,13 +2,10 @@ package com.example.MonthlyPaymentCalculator;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.PrintStream;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculateTest {
-    static PrintStream out = new PrintStream(System.out, true, UTF_8); //prints out in utf-8 format
 
     @Test
     void power() {

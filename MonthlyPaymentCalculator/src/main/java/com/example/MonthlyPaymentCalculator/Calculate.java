@@ -11,6 +11,8 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Calculate {
 
+
+    //resolves the path for the prospect textfile
     static String pathResolver() {
         Path path = Paths.get("prospects.txt");
         return path.toString();
@@ -45,11 +47,13 @@ public class Calculate {
         return lines;
     }
 
+    //rounding method
     public static double round(double value) {
         // Multiply by 100, round to the nearest integer, and then divide by 100
         return (int) (value * 100 + 0.5) / 100.0;
     }
 
+    //calculate the monthly payment and return it
     public static double getMonthlyPayment(double totalLoan, double interest, int years) {
         double MonthlyInterest = (((interest) / 12) / 100);//monthly interest, divided by 100 for percentage
         double MonthlyPayments = years * 12; //how many months when year is given
@@ -58,14 +62,13 @@ public class Calculate {
         return round(formula);
     }
 
+    //print out formula for Calculate.main
     static String printFormula(double totalLoan, double interest, int years) {
         double formula = getMonthlyPayment(totalLoan, interest, years);
-
         return String.format("wants to borrow %s € for a period of %s years and pay %s € each month %n", totalLoan, years, formula);
-
     }
 
-
+    //calculates the formula from file and prints out amount (not used in web interface)
     public static String calculateFromFile(String path) {
         try {
 
@@ -111,9 +114,10 @@ public class Calculate {
             throw new RuntimeException(e);
         }
 
-        return path;
+        return "failed";
     }
 
+    //getting the initial data for spring app (reading prospects from file)
     public static Prospect[] initialData() throws IOException {
         String path = pathResolver();
         int lines = lineReader(path);

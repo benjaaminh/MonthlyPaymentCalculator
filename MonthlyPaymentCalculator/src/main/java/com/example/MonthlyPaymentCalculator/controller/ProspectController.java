@@ -21,9 +21,9 @@ public class ProspectController {
     }
 
 
-
+    //returns the prospect form for creating new prospects
     @GetMapping("/new")
-    public String addTutorial(Model model) {
+    public String addProspect(Model model) {
         Prospect prospect = new Prospect();
 
         model.addAttribute("prospect", prospect);
@@ -33,8 +33,10 @@ public class ProspectController {
         return "prospect_form";
     }
 
+
+    //for saving the prospects when added
     @PostMapping("/save")
-    public String saveTutorial(Prospect tutorial, RedirectAttributes redirectAttributes) {
+    public String saveProspect(Prospect tutorial, RedirectAttributes redirectAttributes) {
         try {
             tutorial.setMonthlyPayment(Calculate.getMonthlyPayment(tutorial.getTotalLoan(),tutorial.getInterest(),tutorial.getYears()));
             repo.save(tutorial);
@@ -47,12 +49,13 @@ public class ProspectController {
         return "redirect:/";
     }
 
+    //for deleting a prospect
+
     @GetMapping("/delete/{id}")
-    public String deleteTutorial(@PathVariable("id") Long id, Model model, RedirectAttributes redirectAttributes) {
+    public String deleteProspect(@PathVariable("id") Long id, Model model, RedirectAttributes redirectAttributes) {
         try {
             repo.deleteById(id);
-
-            redirectAttributes.addFlashAttribute("message", "The Tutorial with id=" + id + " has been deleted successfully!");
+            redirectAttributes.addFlashAttribute("message", "The Prospect with id=" + id + " has been deleted successfully!");
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
         }

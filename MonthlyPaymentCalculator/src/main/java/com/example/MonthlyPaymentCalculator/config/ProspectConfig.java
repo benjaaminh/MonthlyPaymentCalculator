@@ -16,8 +16,7 @@ public class ProspectConfig {
     @Bean
     CommandLineRunner commandLineRunner(ProspectRepository repository){
         return args -> {
-repository.saveAll(List.of(initialData()));
-           // System.out.println(initialData()[1].getName());
+        repository.saveAll(List.of(initialData()));
         };
     }
 }

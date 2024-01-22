@@ -1,7 +1,6 @@
 package com.example.MonthlyPaymentCalculator.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -13,6 +12,10 @@ public class Prospect {
     private String name;
 
     private double totalLoan;
+
+    private double interest;
+
+    private int years;
 
     public long getId() {
         return id;
@@ -54,10 +57,6 @@ public class Prospect {
         this.years = years;
     }
 
-    private double interest;
-
-    private int years;
-
     public double getMonthlyPayment() {
         return monthlyPayment;
     }
@@ -69,10 +68,12 @@ public class Prospect {
     private double monthlyPayment;
 
 
+    //simple constructor
+
     public Prospect() {
 
     }
-
+    //constructor with all fields
     public Prospect(String name, double totalLoan, double interest, int years, double monthlyPayment){
         this.name=name;
         this.totalLoan=totalLoan;
