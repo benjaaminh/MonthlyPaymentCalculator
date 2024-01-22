@@ -38,7 +38,7 @@ cd MonthlyPaymentCalculator
 ```
 Build the docker image:
 ```
-docker build --tag java-docker
+docker build --tag java-docker .
 ```
 Run the project using the following command:
 ```
