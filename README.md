@@ -48,10 +48,14 @@ Build the docker image:
 ```
 docker build --tag java-docker .
 ```
-Note: if building does not work, change line endings of mvnw file from CRLF to LF. This can be done from the bottom right of most editors.
+### Note: if building does not work, change line endings of mvnw file from CRLF to LF. This can be done from the bottom right of most editors. Remember to save the file!
 
 Run the project using the following command:
 ```
 docker run -p 8080:8080 java-docker
+```
+Using a web browser, navigate to:
+```
+http://localhost:8080
 ```
 Or if you are using Docker desktop, build the image and run it through desktop application with port set to 8080
