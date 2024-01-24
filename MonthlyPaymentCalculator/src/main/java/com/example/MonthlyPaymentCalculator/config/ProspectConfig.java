@@ -1,6 +1,5 @@
 package com.example.MonthlyPaymentCalculator.config;
 
-import com.example.MonthlyPaymentCalculator.models.Prospect;
 import com.example.MonthlyPaymentCalculator.repository.ProspectRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
