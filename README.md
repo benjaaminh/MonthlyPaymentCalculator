@@ -19,10 +19,12 @@ Navigate to the cloned folder:
 ```
 cd MonthlyPaymentCalculator
 ```
-Run the project using the following command:
+Build and run the project using the following command:
 ```
 ./mvnw clean spring-boot:run
 ```
+### Note: if building does not work, change line endings of mvnw file from CRLF to LF. This can be done from the bottom right of most editors. Remember to save the file!
+
 Using a web browser, navigate to:
 ```
 http://localhost:8080
