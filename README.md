@@ -5,10 +5,12 @@ Calculate.java prints out each prospect with their name, total loan, yearly inte
 
 MonthlyPaymentCalculatorApplication.java runs a Spring Boot project with Thymeleaf, Maven and Bootstrap in the web browser.
 
-## Prerequisites for running the Spring Project
-JDK 17 and JAVA_HOME environvment variable set
 
 ## Running the project locally
+
+## Prerequisites for running locally
+JDK 17 and JAVA_HOME environvment variable set
+
 Clone the repository: 
 ```
 git clone https://github.com/benjaaminh/MonthlyPaymentCalculator
@@ -28,6 +30,10 @@ http://localhost:8080
 Now the program is ready to use
 
 ## Running the project with docker
+
+## Prerequisites for running with docker
+Install docker desktop for your system
+
 Clone the repository:
 ```
 git clone https://github.com/benjaaminh/MonthlyPaymentCalculator
