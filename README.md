@@ -8,8 +8,8 @@ MonthlyPaymentCalculatorApplication.java runs a Spring Boot project with Thymele
 
 ## Running the project locally
 
-## Prerequisites for running locally
-JDK 17 and JAVA_HOME environvment variable set
+### Prerequisites for running locally
+JDK 17 and [JAVA_HOME environvment variable set](https://www.baeldung.com/java-home-on-windows-mac-os-x-linux)
 
 Clone the repository: 
 ```
@@ -31,8 +31,10 @@ Now the program is ready to use
 
 ## Running the project with docker
 
-## Prerequisites for running with docker
+### Prerequisites for running with docker
 Install docker desktop for your system
+
+Run the docker desktop app to start the docker engine
 
 Clone the repository:
 ```
