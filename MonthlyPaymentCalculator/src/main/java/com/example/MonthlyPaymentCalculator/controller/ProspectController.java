@@ -1,6 +1,6 @@
 package com.example.MonthlyPaymentCalculator.controller;
 
-import com.example.MonthlyPaymentCalculator.Calculate;
+import com.example.MonthlyPaymentCalculator.baseApp.Calculate;
 import com.example.MonthlyPaymentCalculator.models.Prospect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

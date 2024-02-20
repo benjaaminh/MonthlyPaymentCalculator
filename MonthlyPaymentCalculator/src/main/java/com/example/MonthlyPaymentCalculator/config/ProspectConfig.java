@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 import java.util.Set;
 
-import static com.example.MonthlyPaymentCalculator.Calculate.initialData;
+import static com.example.MonthlyPaymentCalculator.InitialData.initialData;
 
 @Configuration
 public class ProspectConfig {

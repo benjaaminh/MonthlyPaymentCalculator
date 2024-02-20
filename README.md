@@ -1,15 +1,16 @@
 # Monthly payment calculator
 This project consists of two Programs, Calculate and MonthlyPaymentCalculatorApplication.
 
-Calculate.java prints out each prospect with their name, total loan, yearly interest, and amount of years as well as monthly payment.
+Calculate.java, located in the baseApp package contains all calculations and prints out each prospect with their name, total loan, yearly interest, and amount of years as well as monthly payment.
+Calculate.java uses the FileReader class to resolve the path for the .txt file and read the number of lines in it.
 
 MonthlyPaymentCalculatorApplication.java runs a Spring Boot project with Thymeleaf, Maven and Bootstrap in the web browser. The webapp uses an in-memory H2 database, so deleting and adding prospects will not cause damage.
-
+The InitialData class reads the prospects.txt file and returns an array of all prospects as initial data for the webapp.
 
 ## Running the project locally
 
 ### Prerequisites for running locally
-JDK 17 and [JAVA_HOME environvment variable set](https://www.baeldung.com/java-home-on-windows-mac-os-x-linux)
+JDK 17 and [JAVA_HOME environment variable set](https://www.baeldung.com/java-home-on-windows-mac-os-x-linux)
 
 Clone the repository: 
 ```

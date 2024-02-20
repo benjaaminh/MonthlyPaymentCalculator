@@ -1,5 +1,7 @@
 package com.example.MonthlyPaymentCalculator;
 
+import com.example.MonthlyPaymentCalculator.baseApp.Calculate;
+import com.example.MonthlyPaymentCalculator.baseApp.FileReader;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -11,7 +13,7 @@ class CalculateTest {
     void power() {
         assertAll(
                 "Testing power method",
-                ()->assertEquals(49,Calculate.power(7,2)),
+                ()->assertEquals(49, Calculate.power(7,2)),
                 ()->  assertEquals(10000000000L,Calculate.power(10,10)));
     }
 
@@ -19,8 +21,8 @@ class CalculateTest {
     void lineReader() {
         assertAll(
                 "Testing line reader method",
-                () -> assertEquals(5, Calculate.lineReader("prospects.txt")),
-                () -> assertEquals(7, Calculate.lineReader("test.txt")));
+                () -> assertEquals(5, FileReader.lineReader("prospects.txt")),
+                () -> assertEquals(7, FileReader.lineReader("test.txt")));
     }
 
     @Test

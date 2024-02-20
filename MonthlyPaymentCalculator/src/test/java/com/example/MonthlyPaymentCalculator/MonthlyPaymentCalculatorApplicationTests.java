@@ -1,5 +1,6 @@
 package com.example.MonthlyPaymentCalculator;
 
+import com.example.MonthlyPaymentCalculator.baseApp.Calculate;
 import com.example.MonthlyPaymentCalculator.models.Prospect;
 import com.example.MonthlyPaymentCalculator.repository.ProspectRepository;
 import org.junit.jupiter.api.Test;
@@ -22,14 +23,18 @@ class MonthlyPaymentCalculatorApplicationTests {
 
 	@Test
 	void testAddProspect(){
-				Prospect p = new Prospect("test",2000,2,2,Calculate.getMonthlyPayment(2000,2,2));
+				repository.deleteAll();
+				Prospect p = new Prospect("test",2000,2,2, Calculate.getMonthlyPayment(2000,2,2));
 				repository.save(p);
-				assertTrue(repository.findAll().size()>4);
+				assertEquals(1,repository.findAll().size());
 	}
 	@Test
 	void testDeleteProspect(){
+		repository.deleteAll();
+		Prospect p = new Prospect("test",2000,2,2, Calculate.getMonthlyPayment(2000,2,2));
+		repository.save(p);
 		repository.deleteById(1L);
-		assertTrue(repository.findAll().size()<4);
+		assertEquals(1,repository.findAll().size());
 	}
 
 }
